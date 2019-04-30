@@ -11,10 +11,7 @@ object MainAboxMethode1 {
 
   def main(args: Array[String]): Unit = {
     println("test avant")
-    
-    // Encodage Abox Non optimiser
-    
-    
+
     val fileP: java.io.File = new File(FilePath.SaveFileLumbFinal)
 
     val linesLumb = Source.fromFile(FilePath.OwlFiLELIMB).getLines
@@ -46,7 +43,7 @@ object MainAboxMethode1 {
         }
 
         val linesPrope = Source.fromFile(FilePath.SaveFileP).getLines
-        val mapPrope = linesPrope.map(x => x.split(" ")).map(t => (t(0), t(2)))
+        val mapPrope = linesPrope.map(x => x.split(" ")).map(t => ("<"+ t(0) + ">", t(2)))
         val p = mapPrope.toIterator
         for (aa <- p) {
           if (lum._1.equals(aa._1)) sujet1 = aa._2.toInt
@@ -55,7 +52,7 @@ object MainAboxMethode1 {
         }
 
         val linesConcept = Source.fromFile(FilePath.SaveFileC).getLines
-        val mapConcept = linesConcept.map(x => x.split(" ")).map(t => (t(0), t(2)))
+        val mapConcept = linesConcept.map(x => x.split(" ")).map(t => ("<"+ t(0) + ">",t(2)))
         val c = mapConcept.toIterator
         for (aa <- c) {
           if (lum._1.equals(aa._1)) sujet2 = aa._2.toInt

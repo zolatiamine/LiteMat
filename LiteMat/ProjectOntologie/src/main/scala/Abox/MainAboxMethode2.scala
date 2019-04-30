@@ -7,7 +7,9 @@ object MainAboxMethode2 {
 
 
   def main(args: Array[String]): Unit = {
-
+    
+    // Encodage Abox Optimiser
+    
     System.setProperty("hadoop.home.dir", "C://ProjetBigData//ProjectOntologie//winutils")
 
     val conf = new SparkConf()

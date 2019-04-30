@@ -8,5 +8,6 @@ object FilePath {
   val SaveFileS = "src//main//resources//Output//subjects.txt"
   val lubmEncod = "src//main//resources//Output//lubmEnc"
 
+  // pour L'encodage Abox Non optimiser
   val SaveFileLumbFinal = "src//main//resources//Output//lumbFinal.txt"
 }

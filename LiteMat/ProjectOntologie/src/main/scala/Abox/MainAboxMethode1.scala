@@ -11,7 +11,7 @@ object MainAboxMethode1 {
 
   def main(args: Array[String]): Unit = {
     println("test avant")
-    // Encodage non optimiser
+
     val fileP: java.io.File = new File(FilePath.SaveFileLumbFinal)
 
     val linesLumb = Source.fromFile(FilePath.OwlFiLELIMB).getLines
@@ -23,15 +23,15 @@ object MainAboxMethode1 {
 
       while (mapLumb.hasNext) {
         val lum = mapLumb.next()
-        var sujet1 = 0
-        var pred1 = 0
-        var objec1 = 0
-        var sujet2 = 0
-        var pred2 = 0
-        var objec2 = 0
-        var sujet = 0
-        var pred = 0
-        var objec = 0
+        var sujet1 = -1
+        var pred1 = -1
+        var objec1 = -1
+        var sujet2 = -1
+        var pred2 = -1
+        var objec2 = -1
+        var sujet = -1
+        var pred = -1
+        var objec = -1
 
         val linesSubject = Source.fromFile(FilePath.SaveFileS).getLines
         val mapsubject = linesSubject.map(x => x.split(" ")).map(t => (t(0), t(1)))
@@ -60,32 +60,32 @@ object MainAboxMethode1 {
           else if (lum._3.equals(aa._1)) objec2 = aa._2.toInt
         }
         var sujeFinal = ""
-        if (sujet != 0) {
+        if (sujet != -1) {
           sujeFinal = sujet.toString
-        } else if (sujet1 != 0) {
+        } else if (sujet1 != -1) {
           sujeFinal = sujet1.toString
-        } else if (sujet2 != 0) {
+        } else if (sujet2 != -1) {
           sujeFinal = sujet2.toString
         } else {
           sujeFinal = lum._1
         }
         var predFinal = ""
-        if (pred != 0) {
+        if (pred != -1) {
           predFinal = pred.toString
-        } else if (pred1 != 0) {
+        } else if (pred1 != -1) {
           predFinal = pred1.toString
-        } else if (pred2 != 0) {
+        } else if (pred2 != -1) {
           predFinal = pred2.toString
         } else {
           predFinal = lum._2
         }
 
         var objectFinal = ""
-        if (objec != 0) {
+        if (objec != -1) {
           objectFinal = objec.toString
-        } else if (objec1 != 0) {
+        } else if (objec1 != -1) {
           objectFinal = objec1.toString
-        } else if (objec2 != 0) {
+        } else if (objec2 != -1) {
           objectFinal = objec2.toString
         } else {
           objectFinal = lum._3

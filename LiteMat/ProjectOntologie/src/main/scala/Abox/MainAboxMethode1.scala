@@ -11,7 +11,7 @@ object MainAboxMethode1 {
 
   def main(args: Array[String]): Unit = {
     println("test avant")
-
+    // Encodage non optimiser
     val fileP: java.io.File = new File(FilePath.SaveFileLumbFinal)
 
     val linesLumb = Source.fromFile(FilePath.OwlFiLELIMB).getLines
